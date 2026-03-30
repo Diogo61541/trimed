@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriMed | Quem somos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f9ff;
+      --surface: #ffffff;
+      --line: #d8e7fb;
+      --text: #15253f;
+      --muted: #556b8b;
+      --brand: #006ce4;
+      --brand-strong: #004a9c;
+      --accent: #ff7a1a;
+      --radius: 14px;
+      --max: 1020px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(0, 108, 228, 0.18), transparent 30%),
+        radial-gradient(circle at 100% 10%, rgba(255, 122, 26, 0.15), transparent 24%),
+        linear-gradient(165deg, var(--bg), #ffffff);
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(94%, var(--max));
+      margin: 0 auto;
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .top .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 10px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, var(--brand), #00a6ff 50%, #34d399);
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 108, 228, 0.24);
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      left: 10px;
+      top: 16px;
+      background: #fff;
+      box-shadow: 0 -5px 0 #fff, 0 5px 0 #fff;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      right: 6px;
+      top: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-strong);
+    }
+
+    .hero {
+      padding: 34px 0 14px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      line-height: 1.1;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      max-width: 760px;
+    }
+
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      box-shadow: 0 14px 28px rgba(18, 60, 112, 0.08);
+    }
+
+    .card p {
+      margin: 0 0 8px;
+      color: var(--muted);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pill {
+      display: inline-block;
+      margin-bottom: 10px;
+      background: #eaf4ff;
+      color: #34567f;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 10px;
+    }
+
+    .numbers {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .number-box {
+      border: 1px dashed #bfd7fb;
+      border-radius: 12px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+
+    .number-box b {
+      display: block;
+      color: var(--brand-strong);
+      font-size: 1.25rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .topics {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .topic {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .topic h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      font-family: "Space Grotesk", sans-serif;
+      color: #1d355b;
+    }
+
+    .topic p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      margin-top: 16px;
+      border-radius: 14px;
+      border: 1px solid #ffe0c6;
+      background: linear-gradient(145deg, #fff7f0, #ffffff);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta p {
+      margin: 0;
+      color: #5f4b3b;
+      max-width: 720px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 22px 0 30px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .topics { grid-template-columns: 1fr; }
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <a class="logo" href="trimedsite.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        TriMed
+      </a>
+      <a class="btn btn-primary" href="trimedsite.html">Voltar para busca</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Quem somos</h1>
+      <p class="lead">A TriMed é um projeto digital criado para facilitar o encontro entre pacientes, profissionais de saúde e clínicas de Brasília, com foco em acesso rápido, preço transparente e atendimento humanizado.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="pill">Nossa origem</span>
+          <p>O projeto nasceu da necessidade real de reduzir burocracia, deslocamento e custos para quem precisa de cuidado em saúde no dia a dia.</p>
+          <p>Percebemos que muitas pessoas passam horas pesquisando contatos, sem clareza de valores e sem saber quem atende perto de casa.</p>
+          <p>A TriMed organiza essas informações em um só lugar para tornar a escolha mais simples, segura e justa.</p>
+        </article>
+
+        <article class="card">
+          <span class="pill">Nosso compromisso</span>
+          <p>Queremos apoiar uma saúde mais acessível, conectando pacientes a opções de consulta, exames e serviços com linguagem clara e comparação objetiva.</p>
+
+          <div class="numbers">
+            <div class="number-box">
+              <b>+ acesso</b>
+              Menos barreiras para encontrar atendimento de forma rápida.
+            </div>
+            <div class="number-box">
+              <b>+ clareza</b>
+              Comparação de preço, avaliação e disponibilidade no mesmo fluxo.
+            </div>
+            <div class="number-box">
+              <b>+ impacto social</b>
+              Incentivo a valores populares e cotas sociais em clínicas parceiras.
+            </div>
+            <div class="number-box">
+              <b>+ autonomia</b>
+              Paciente com mais controle sobre decisão e planejamento de cuidado.
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="topics" aria-label="Pilares da plataforma">
+        <article class="topic">
+          <h3>Transparência</h3>
+          <p>Preços e informações apresentados de forma direta, sem linguagem confusa.</p>
+        </article>
+        <article class="topic">
+          <h3>Confiança</h3>
+          <p>Perfis com dados objetivos para ajudar na escolha de profissionais e clínicas.</p>
+        </article>
+        <article class="topic">
+          <h3>Evolução contínua</h3>
+          <p>Projeto em desenvolvimento constante, guiado por feedback de usuários reais.</p>
+        </article>
+      </section>
+
+      <section class="cta" aria-label="Convite de participação">
+        <p>TriMed é um projeto feito para pessoas. Quanto mais pacientes, profissionais e clínicas participam, melhor fica a plataforma para toda a comunidade.</p>
+        <a class="btn btn-primary" href="cadastro.html">Participar agora</a>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    TriMed | Projeto de conexão em saúde com foco social em Brasília.
+  </footer>
+</body>
+</html>

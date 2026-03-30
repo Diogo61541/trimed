@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriMed | Para clínicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6fbff;
+      --surface: #ffffff;
+      --line: #d8e7fb;
+      --text: #15253f;
+      --muted: #596e8e;
+      --brand: #006ce4;
+      --accent: #ff7a1a;
+      --radius: 14px;
+      --max: 1020px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 85% 0%, rgba(255,122,26,0.14), transparent 26%), linear-gradient(165deg, var(--bg), #fff);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: rgba(0, 108, 228, 0.2);
+      filter: blur(26px);
+      left: -100px;
+      bottom: -90px;
+      pointer-events: none;
+    }
+    .container { width: min(94%, var(--max)); margin: 0 auto; }
+    .top { border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.94); position: sticky; top: 0; z-index: 10; }
+    .top .container { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, var(--brand), #00a6ff 55%, #34d399);
+      position: relative;
+      box-shadow: 0 8px 18px rgba(0, 108, 228, 0.24);
+    }
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 2px solid #fff;
+      left: 8px;
+      top: 8px;
+    }
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      right: 5px;
+      top: 5px;
+    }
+    .btn { background: var(--brand); color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; }
+    main { padding: 34px 0 24px; }
+    h1, h2 { font-family: "Space Grotesk", sans-serif; margin-top: 0; }
+    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+    p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; }
+    .card p { margin-bottom: 0; }
+    .portfolio {
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .clinic-item {
+      border: 1px solid #dbe9fb;
+      border-radius: 12px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+    .clinic-item h3 {
+      margin: 0 0 4px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+    }
+    .clinic-item .exam { font-weight: 700; color: #30547f; }
+    .clinic-item .price { font-weight: 800; color: #1a7a55; }
+    .legend {
+      margin-top: 8px;
+      color: #4d6283;
+      font-size: 0.95rem;
+    }
+    .sim { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; }
+    .sim form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 8px; }
+    input { border: 1px solid #ccdff9; border-radius: 10px; padding: 10px; font: inherit; }
+    button { border: 0; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 700; padding: 0 14px; cursor: pointer; }
+    .res { margin-top: 10px; color: #244165; font-weight: 700; }
+    footer { text-align: center; color: var(--muted); padding: 20px 0 30px; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .sim form { grid-template-columns: 1fr; }
+      button { min-height: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <a class="logo" href="trimedsite.html">
+        <span class="logo-mark"></span>
+        TriMed
+      </a>
+      <a class="btn" href="trimedsite.html">Voltar para busca</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>TriMed para clínicas e consultórios</h1>
+    <p>Página dedicada para explicar de forma clara como clínicas podem captar pacientes, reduzir ociosidade de agenda e oferecer exames com melhor custo-benefício para quem mais precisa.</p>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Gestão de agenda</h2>
+        <p>Sincronização de horários com bloqueios automáticos para evitar overbooking.</p>
+      </article>
+      <article class="card">
+        <h2>Visibilidade local com impacto social</h2>
+        <p>Destaque para atendimento em Brasília com filtros de bairro, modalidade e faixa de preço acessível.</p>
+      </article>
+      <article class="card">
+        <h2>Conversão com transparência</h2>
+        <p>Contato em um clique, perfil completo, exame e valor em destaque para decisão rápida do paciente.</p>
+      </article>
+    </section>
+
+    <section class="portfolio">
+      <h2>Portfólio de clínicas e exames com melhor custo-benefício</h2>
+      <p>Exemplos de clínicas parceiras para exames essenciais com valores populares.</p>
+      <div class="portfolio-grid">
+        <article class="clinic-item">
+          <h3>Clínica Imagem Popular Asa Norte</h3>
+          <div class="exam">Raio-X de tórax (2 incidências)</div>
+          <div class="price">A partir de R$ 58</div>
+          <div>Entrega digital em até 24h, prioridade para baixa renda com comprovação.</div>
+        </article>
+        <article class="clinic-item">
+          <h3>Centro Diagnóstico Vida Sul</h3>
+          <div class="exam">Tomografia computadorizada de crânio</div>
+          <div class="price">A partir de R$ 185</div>
+          <div>Parcelamento sem juros e encaixe para urgência eletiva.</div>
+        </article>
+        <article class="clinic-item">
+          <h3>Laboratório Cuidar Ceilândia</h3>
+          <div class="exam">Coleta de sangue (hemograma + glicemia)</div>
+          <div class="price">A partir de R$ 34</div>
+          <div>Coleta ágil, opção domiciliar e desconto social progressivo.</div>
+        </article>
+        <article class="clinic-item">
+          <h3>Clínica Diagnóstica Samambaia</h3>
+          <div class="exam">Tomografia de tórax sem contraste</div>
+          <div class="price">A partir de R$ 210</div>
+          <div>Preço especial para pacientes encaminhados via triagem TriMed.</div>
+        </article>
+      </div>
+      <div class="legend">Critério de destaque TriMed: preço justo + qualidade assistencial + tempo de entrega.</div>
+    </section>
+
+    <section class="sim">
+      <h2>Simulador de impacto social da agenda</h2>
+      <p>
+        Este simulador serve para mostrar duas coisas de forma simples:
+        1) quanto a clínica pode faturar mantendo preço popular;
+        2) quantos atendimentos sociais consegue oferecer com a ocupação atual.
+      </p>
+      <form id="simForm">
+        <input id="consultas" type="number" min="1" value="160" placeholder="Capacidade total de exames no mês" />
+        <input id="ticket" type="number" min="1" value="120" placeholder="Valor médio por exame (R$)" />
+        <input id="ocupacao" type="number" min="1" max="100" value="75" placeholder="Ocupação real da agenda (%)" />
+        <button type="submit">Calcular</button>
+      </form>
+      <div class="res" id="simRes">Receita estimada: R$ 14.400 | Cotas sociais estimadas: 18 exames/mês</div>
+    </section>
+  </main>
+
+  <footer>TriMed - Solução digital para clínicas com foco em eficiência.</footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById("simForm");
+      const res = document.getElementById("simRes");
+
+      function moeda(v) {
+        return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0 });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const consultas = Number(document.getElementById("consultas").value || 0);
+        const ticket = Number(document.getElementById("ticket").value || 0);
+        const ocupacao = Number(document.getElementById("ocupacao").value || 0) / 100;
+        const total = consultas * ticket * ocupacao;
+        const cotasSociais = Math.round(consultas * ocupacao * 0.15);
+        res.textContent = "Receita estimada: " + moeda(total) + " | Cotas sociais estimadas: " + cotasSociais + " exames/mês";
+      });
+    })();
+  </script>
+</body>
+</html>
